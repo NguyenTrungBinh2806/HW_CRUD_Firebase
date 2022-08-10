@@ -1,0 +1,74 @@
+<div class="parent">
+  <div class="section yellow">
+    <form>
+      <label for="id">ID</label>
+      <br />
+      <input
+        type="text"
+        name="id"
+        id="id"
+        class="input"
+        [(ngModel)]="currentNote.id"
+        placeholder="Enter ID"
+        readonly
+      />
+      <br />
+      <label for="title">Title</label>
+      <br />
+      <input
+        type="text"
+        name="title"
+        id="title"
+        class="input"
+        [(ngModel)]="currentNote.title"
+        placeholder="Enter title"
+      />
+      <br />
+      <label for="date">Date</label>
+      <br />
+      <input
+        type="date"
+        name="dob"
+        id="dob"
+        class="input"
+        [(ngModel)]="currentNote.date"
+
+        placeholder="Enter date"
+      />
+      <br />
+      <label for="text">Note</label>
+      <br />
+      <textarea
+        type="text"
+        name="text"
+        id="text"
+        class="text"
+        [(ngModel)]="currentNote.text"
+        placeholder="Enter your note"
+      ></textarea>
+      <br />
+      <button (click)="addNewNote()" class="add">Save</button>
+    </form>
+  </div>
+  <div class="section purple">
+    <table>
+      <tr>
+        <!-- <th>Id</th> -->
+        <th>Title</th>
+        <th>Date</th>
+        <th>Note</th>
+        <th>Management</th>
+      </tr>
+      <tr *ngFor="let note of notes$ | async">
+        <!-- <td>{{ note.id }}</td> -->
+        <td>{{ note.title }}</td>
+        <td>{{ note.date }}</td>
+        <td>{{ note.text }}</td>
+        <td>
+          <button class="delete" (click)="deleteANote(note.id)">Delete</button>
+          <button class="update">Update</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

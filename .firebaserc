@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "student-management-fd965": {
+      "hosting": {
+        "NoteApp": [
+          "student-management-fd965"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "student-management-fd965"
+  }
+}
